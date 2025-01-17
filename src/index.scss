@@ -1,0 +1,48 @@
+:root {
+  --page-padding-x: 0 160px 0 320px;
+  --page-padding-top: 170px;
+  --page-padding-bottom: 104px;
+
+  --page-padding-left-mini: 80px;
+  --page-padding-right-mini: 40px;
+  --page-padding-x-mini: 0 var(--page-padding-right-mini) 0 var(--page-padding-left-mini);
+
+  --background: #ffffff;
+  --gradient: linear-gradient(180deg, #3877ee -5%, #ef5da8 85%);
+
+  --font-color: #42567a;
+  --font-color-accent: #3877ee;
+
+  --accent-color-1: #5d5fef;
+  --accent-color-2: #ef5da8;
+
+  --border-color: #42567a;
+  --border-color-transparent: #42567a1a;
+
+  --font-b: 1.5625rem;
+  --font-b-height: 1.875rem;
+
+  --font-p: 1.25rem;
+  --font-p-height: 1.875rem;
+
+  --font-mega: 12.5rem;
+  --font-mega-height: 10rem;
+
+  --font-h1: 3.5rem;
+  --font-h1-height: 4.2rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}

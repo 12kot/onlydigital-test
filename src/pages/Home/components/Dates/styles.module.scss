@@ -1,0 +1,25 @@
+.container {
+  position: absolute;
+  display: flex;
+  gap: 80px;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .blue,
+  .rose {
+    font-size: var(--font-mega);
+    font-weight: 700;
+    line-height: var(--font-mega-height);
+    letter-spacing: -0.02em;
+  }
+
+  .blue {
+    color: var(--accent-color-1);
+  }
+
+  .rose {
+    color: var(--accent-color-2);
+  }
+}

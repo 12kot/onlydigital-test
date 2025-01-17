@@ -1,0 +1,15 @@
+.container {
+  padding-left: var(--page-padding-left-mini);
+  position: relative;
+
+  .border {
+    width: 5px;
+    height: 90%;
+    background-image: var(--gradient);
+
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

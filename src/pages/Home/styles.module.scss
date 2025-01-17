@@ -1,0 +1,45 @@
+.absoluteBorder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  position: relative;
+
+  padding-top: var(--page-padding-top);
+  padding-bottom: var(--page-padding-bottom);
+
+  border-left: 1px solid var(--border-color-transparent);
+  border-right: 1px solid var(--border-color-transparent);
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    width: 100%;
+    height: 100%;
+
+    padding-right: --page-padding-right-mini;
+    height: 100%;
+    z-index: 10;
+  }
+
+  .borderX {
+    width: 100%;
+    transform: translate(-50%, -50%);
+    @extend .absoluteBorder;
+  }
+
+  .borderY {
+    width: 100vh;
+    transform: translate(-50%, -50%) rotate(90deg);
+    @extend .absoluteBorder;
+  }
+}

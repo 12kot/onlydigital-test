@@ -1,0 +1,33 @@
+.h1,
+.b,
+.p {
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.h1 {
+  font-family: 'PT Sans', serif;
+  font-weight: 700;
+  font-size: var(--font-h1);
+  line-height: var(--font-h1-height);
+  
+  color: var(--font-color);
+}
+
+.b {
+  font-family: 'Bebas Neue', serif;
+  font-weight: 400;
+  font-size: var(--font-b);
+  line-height: var(--font-b-height);
+  
+  color: var(--font-color-accent);
+}
+
+.p {
+  font-family: 'PT Sans', serif;
+  font-weight: 400;
+  font-size: var(--font-p);
+  line-height: var(--font-p-height);
+
+  color: var(--font-color);
+}
