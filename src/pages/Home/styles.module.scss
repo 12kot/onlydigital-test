@@ -35,11 +35,23 @@
     width: 100%;
     transform: translate(-50%, -50%);
     @extend .absoluteBorder;
+    
+    @media screen and (max-width: 1024px) {
+      border-top: 1px solid var(--border-color-mobile);
+    }
   }
-
+  
   .borderY {
     width: 100vh;
     transform: translate(-50%, -50%) rotate(90deg);
     @extend .absoluteBorder;
+    
+    @media screen and (max-width: 1024px) {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    border: none;
   }
 }

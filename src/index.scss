@@ -17,19 +17,47 @@
   --accent-color-2: #ef5da8;
 
   --border-color: #42567a;
+  --border-color-mobile: #C7CDD9;
   --border-color-transparent: #42567a1a;
 
-  --font-b: 1.5625rem;
-  --font-b-height: 1.875rem;
+  --font-b: max(min(1.5625rem, 2vw), 1rem);
+  --font-b-height: max(min(1.875rem, 2vw), 1.2rem);
 
-  --font-p: 1.25rem;
-  --font-p-height: 1.875rem;
+  --font-p: max(min(1.25rem, 2vw), 0.875rem);
+  --font-p-height: max(min(1.875rem, 2vw), 1.27rem);
 
-  --font-mega: 12.5rem;
-  --font-mega-height: 10rem;
+  --font-mega: max(min(12.5rem, 8vw), 3.5rem);
+  --font-mega-height: max(min(10rem, 8vw), 4.53rem);
 
-  --font-h1: 3.5rem;
-  --font-h1-height: 4.2rem;
+  --font-h1: max(min(3.5rem, 3vw), 1.25rem);
+  --font-h1-height: max(min(4.2rem, 3vw), 1.5rem);
+
+  @media screen and (max-width: 1620px) {
+    --page-padding-x: 0 110px 0 220px;
+    --page-padding-top: 120px;
+    --page-padding-bottom: 54px;
+
+    --page-padding-left-mini: 60px;
+    --page-padding-right-mini: 20px;
+  }
+
+  @media screen and (max-width: 1350px) {
+    --page-padding-x: 0 50px 0 100px;
+    --page-padding-top: 60px;
+    --page-padding-bottom: 27px;
+
+    --page-padding-left-mini: 50px;
+    --page-padding-right-mini: 10px;
+  }
+  
+  @media screen and (max-width: 1024px) {
+    --page-padding-x: 0 20px;
+    --page-padding-top: 59px;
+    --page-padding-bottom: 13px;
+
+    --page-padding-left-mini: 0;
+    --page-padding-right-mini: 0;
+  }
 }
 
 body {

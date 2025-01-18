@@ -22,4 +22,14 @@
   .rose {
     color: var(--accent-color-2);
   }
+
+  @media screen and (max-width: 1024px) {
+    justify-content: space-around;
+    gap: 8px;
+
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+  }
 }
