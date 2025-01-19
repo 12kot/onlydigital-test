@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  padding: var(--page-padding-x-mini);
+
+  .actions {
+    display: flex;
+    gap: 20px;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid var(--border-active);
+      background-color: var(--background);
+
+      svg {
+        fill: var(--font-color);
+      }
+
+      &:disabled {
+        opacity: 50%;
+      }
+
+      @media screen and (max-width: 1024px) {
+        width: 25px;
+        height: 25px;
+
+        svg {
+          width: 16px;
+        }
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      gap: 8px;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    gap: 6px;
+  }
+}

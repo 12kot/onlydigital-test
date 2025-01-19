@@ -31,3 +31,11 @@ export const P = ({ children, className, ...rest }: Props) => {
     </p>
   );
 };
+
+export const Span = ({ children, className, ...rest }: Props) => {
+  return (
+    <span className={cx(styles.span, className)} {...rest}>
+      {children}
+    </span>
+  );
+};

@@ -1,13 +1,14 @@
 :root {
   --page-padding-x: 0 160px 0 320px;
   --page-padding-top: 170px;
-  --page-padding-bottom: 104px;
+  --page-padding-bottom: 84px;
 
   --page-padding-left-mini: 80px;
-  --page-padding-right-mini: 40px;
+  --page-padding-right-mini: 160px;
   --page-padding-x-mini: 0 var(--page-padding-right-mini) 0 var(--page-padding-left-mini);
 
-  --background: #ffffff;
+  --white: #fff;
+  --background: #f4f5f9;
   --gradient: linear-gradient(180deg, #3877ee -5%, #ef5da8 85%);
 
   --font-color: #42567a;
@@ -17,14 +18,22 @@
   --accent-color-2: #ef5da8;
 
   --border-color: #42567a;
+  --border-active: #42567a80;
   --border-color-mobile: #C7CDD9;
+  --border-color-circle: #42567a33;
+  --border-color-circle-point: #303E5880;
   --border-color-transparent: #42567a1a;
+
+  --circle-width: max(min(530px, 25vw), 280px);
 
   --font-b: max(min(1.5625rem, 2vw), 1rem);
   --font-b-height: max(min(1.875rem, 2vw), 1.2rem);
 
   --font-p: max(min(1.25rem, 2vw), 0.875rem);
   --font-p-height: max(min(1.875rem, 2vw), 1.27rem);
+  
+  --font-span: 0.875rem;
+  --font-span-height: 1.13rem;
 
   --font-mega: max(min(12.5rem, 8vw), 3.5rem);
   --font-mega-height: max(min(10rem, 8vw), 4.53rem);
@@ -35,19 +44,19 @@
   @media screen and (max-width: 1620px) {
     --page-padding-x: 0 110px 0 220px;
     --page-padding-top: 120px;
-    --page-padding-bottom: 54px;
+    --page-padding-bottom: 34px;
 
     --page-padding-left-mini: 60px;
-    --page-padding-right-mini: 20px;
+    --page-padding-right-mini: 60px;
   }
 
   @media screen and (max-width: 1350px) {
     --page-padding-x: 0 50px 0 100px;
     --page-padding-top: 60px;
-    --page-padding-bottom: 27px;
+    --page-padding-bottom: 17px;
 
     --page-padding-left-mini: 50px;
-    --page-padding-right-mini: 10px;
+    --page-padding-right-mini: 50px;
   }
   
   @media screen and (max-width: 1024px) {
@@ -63,6 +72,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: var(--background);
 }
 
 * {
@@ -73,4 +83,13 @@ body {
   outline: none;
   appearance: none;
   -webkit-appearance: none;
+}
+
+button {
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:active {
+    scale: 0.98;
+  }
 }

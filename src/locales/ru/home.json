@@ -1,3 +1,4 @@
 {
-  "historicalDates": "Исторические<br />даты"
+  "historicalDates": "Исторические<br />даты",
+  "progress": "{{ current }}/{{ total }}"
 }

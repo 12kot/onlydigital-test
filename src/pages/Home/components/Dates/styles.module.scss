@@ -23,6 +23,25 @@
     color: var(--accent-color-2);
   }
 
+  .circle {
+    width: var(--circle-width);
+    height: var(--circle-width);
+    border: 1px solid var(--border-color-circle);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    margin: auto;
+    border-radius: 50%;
+    z-index: 4000;
+
+    @media screen and (max-width: 1024px) {
+      display: none;
+    }
+  }
+
   @media screen and (max-width: 1024px) {
     justify-content: space-around;
     gap: 8px;
