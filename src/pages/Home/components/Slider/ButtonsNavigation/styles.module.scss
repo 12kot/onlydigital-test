@@ -1,0 +1,45 @@
+.prevButton,
+.nextButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  border: none;
+  background-color: var(--white);
+  box-shadow: 0px 0px 15px 0px #3877ee1a;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  svg {
+    fill: var(--font-color-accent);
+  }
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.prevButton {
+  left: 20px;
+
+  @media screen and (max-width: 1620px) {
+    left: 5px;
+  }
+}
+
+.nextButton {
+  right: 40px;
+
+  @media screen and (max-width: 1620px) {
+    right: 10px;
+  }
+}

@@ -5,14 +5,14 @@ import { P } from 'shared/components';
 
 import styles from './styles.module.scss';
 
-interface PointProps extends Pick<IPage, 'name'> {
+interface Props extends Pick<IPage, 'name'> {
   angle: number;
   index: number;
   activePage: number;
   changePage: () => void;
 }
 
-export const Point = ({ name, activePage, index, angle, changePage }: PointProps) => {
+export const Point: React.FC<Props> = ({ name, activePage, index, angle, changePage }) => {
   const isActive = activePage === index + 1;
 
   return (

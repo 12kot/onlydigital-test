@@ -5,7 +5,7 @@ interface Props {
   initValue: number;
 }
 
-export const Counter = ({ value, initValue }: Props) => {
+export const Counter: React.FC<Props> = ({ value, initValue }: Props) => {
   const [number, setNumber] = useState<number>(initValue);
 
   useEffect(() => {

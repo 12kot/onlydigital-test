@@ -1,0 +1,30 @@
+.container {
+  position: fixed;
+  bottom: 32px;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: none;
+  gap: 10px;
+
+  .point {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    opacity: 0.4;
+
+    background-color: var(--font-color);
+    transition: 0.3s;
+
+    border: none;
+  }
+
+  .active {
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 1024px) {
+    display: flex;
+  }
+}

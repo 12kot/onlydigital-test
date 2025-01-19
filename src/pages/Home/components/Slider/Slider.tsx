@@ -2,11 +2,11 @@ import { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper';
 
-import { cx } from 'shared/utils';
 import { ISlide } from 'shared/types';
-import { B, P } from 'shared/components';
 
-import { SVGLeftArrow, SVGRightArrow } from 'assets';
+import { Card } from './Card';
+import { PointsNavigation } from './PointsNavigation';
+import { ButtonsNavigation } from './ButtonsNavigation';
 
 import styles from './styles.module.scss';
 
@@ -17,30 +17,31 @@ interface Props {
   slides: ISlide[];
 }
 
-export const Slider = ({ slides }: Props) => {
+export const Slider: React.FC<Props> = ({ slides }) => {
   const swiperRef = useRef<SwiperType>(null);
   const [currentSlide, setCurrentSlide] = useState<number>(0);
 
   return (
     <section className={styles.container}>
-      {currentSlide > 0 && (
-        <button className={styles.prevButton} onClick={() => swiperRef.current?.slidePrev()}>
-          <SVGLeftArrow />
-        </button>
-      )}
-      {currentSlide < slides.length - 3 && (
-        <button className={styles.nextButton} onClick={() => swiperRef.current?.slideNext()}>
-          <SVGRightArrow />
-        </button>
-      )}
+      <ButtonsNavigation
+        slidesCount={slides.length}
+        currentSlide={currentSlide}
+        openPrev={() => swiperRef.current?.slidePrev()}
+        openNext={() => swiperRef.current?.slideNext()}
+      />
+      <PointsNavigation
+        slidesCount={slides.length}
+        currentSlide={currentSlide}
+        onSlideChange={(i: number) => swiperRef.current?.slideTo(i)}
+      />
 
       <Swiper
         spaceBetween={80}
         slidesPerView={3}
-        onSwiper={(swiper) => {
+        onSwiper={(swiper: SwiperType) => {
           swiperRef.current = swiper;
         }}
-        onSlideChange={(swiper) => {
+        onSlideChange={(swiper: SwiperType) => {
           setCurrentSlide(swiper.activeIndex);
         }}
         breakpoints={{
@@ -61,6 +62,7 @@ export const Slider = ({ slides }: Props) => {
             slidesPerView: 3,
           },
         }}
+        id="slider"
       >
         {slides.map((slide, i) => (
           <SwiperSlide key={i}>
@@ -69,18 +71,5 @@ export const Slider = ({ slides }: Props) => {
         ))}
       </Swiper>
     </section>
-  );
-};
-
-interface ICardProps extends ISlide {
-  inScreen: boolean;
-}
-
-const Card = ({ inScreen, date, description }: ICardProps) => {
-  return (
-    <div className={cx(styles.card, !inScreen && styles.opacity)}>
-      <B>{date}</B>
-      <P>{description}</P>
-    </div>
   );
 };

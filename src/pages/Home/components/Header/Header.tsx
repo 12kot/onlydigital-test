@@ -4,7 +4,7 @@ import { H1 } from 'shared/components';
 
 import styles from './styles.module.scss';
 
-export const Header = () => {
+export const Header: React.FC = () => {
   return (
     <header className={styles.container}>
       <div className={styles.border} />

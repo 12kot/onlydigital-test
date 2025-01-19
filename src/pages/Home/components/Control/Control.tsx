@@ -12,18 +12,17 @@ interface Props {
   changePage: (i: number) => void
 }
 
-export const Control = ({ currentValue, maxValue, changePage }: Props) => {
+export const Control: React.FC<Props> = ({ currentValue, maxValue, changePage }) => {
   const { t } = useTranslation('home');
-  console.log(currentValue);
 
   return (
     <section className={styles.container}>
       <Span>{t('progress', { current: `0${currentValue}`, total: `0${maxValue}` })}</Span>
       <div className={styles.actions}>
-        <button onClick={() => changePage(currentValue - 1)} disabled={currentValue - 1 === 0}>
+        <button onClick={() => changePage(currentValue - 2)} disabled={currentValue - 1 === 0}>
           <SVGLeftArrow />
         </button>
-        <button onClick={() => changePage(currentValue + 1)} disabled={currentValue === maxValue}>
+        <button onClick={() => changePage(currentValue)} disabled={currentValue === maxValue}>
           <SVGRightArrow />
         </button>
       </div>

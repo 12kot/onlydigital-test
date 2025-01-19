@@ -7,10 +7,10 @@ import styles from './styles.module.scss';
 interface Props extends Pick<IPage, 'endDate' | 'startDate' | 'name'> {
   totalValues: number;
   activePage: number;
-  changePage: (i: number) => void
+  changePage: (i: number) => void;
 }
 
-export const Dates = ({ startDate, endDate, totalValues, activePage, name, changePage }: Props) => {
+export const Dates: React.FC<Props> = ({ startDate, endDate, totalValues, activePage, name, changePage }) => {
   return (
     <section className={styles.container}>
       <P className={styles.blue}>
@@ -25,7 +25,7 @@ export const Dates = ({ startDate, endDate, totalValues, activePage, name, chang
           .fill(null)
           .map((_, i) => {
             const angle = (360 / totalValues) * i - (360 / totalValues) * activePage;
-            return <Point key={i} index={i} angle={angle} activePage={activePage} name={name} changePage={() => changePage(i + 1)} />;
+            return <Point key={i} index={i} angle={angle} activePage={activePage} name={name} changePage={() => changePage(i)} />;
           })}
       </div>
     </section>

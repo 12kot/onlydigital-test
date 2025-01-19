@@ -1,19 +1,31 @@
-import { useState } from 'react';
+import gsap from 'gsap';
 
 import { IPage } from 'shared/types';
 import { HR } from 'shared/components';
+import { useQueryParam } from 'shared/hooks';
 import { MOCK_PAGES } from 'shared/constants';
 import { Control, Dates, Header, Slider } from './components';
 
 import styles from './styles.module.scss';
 
-export const Home = () => {
-  const [currentPage, setCurrentPage] = useState<IPage>(MOCK_PAGES[0]);
+export const Home: React.FC = () => {
+  const [currentPageNumber, setCurrentPageNumber] = useQueryParam<number>('page', 0);
+  const currentPage: IPage = MOCK_PAGES[!Number(currentPageNumber) || currentPageNumber >= MOCK_PAGES.length ? 0 : currentPageNumber];
 
   const handleChangePage = (i: number) => {
-    console.log(i);
-    const index = MOCK_PAGES.length > i - 1 && i - 1 > 0 ? i - 1 : 0;
-    setCurrentPage(MOCK_PAGES[index]);
+    const index = MOCK_PAGES.length > i && i > 0 ? i : 0;
+
+    gsap.to('#slider', {
+      opacity: 0,
+      duration: 0.2,
+      onComplete: () => {
+        setCurrentPageNumber(index);
+        gsap.to('#slider', {
+          opacity: 1,
+          duration: 0.5,
+        });
+      },
+    });
   };
 
   return (
